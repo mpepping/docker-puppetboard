@@ -18,9 +18,7 @@ LABEL org.label-schema.maintainer="Puppet Release Team <release@puppet.com>" \
       org.label-schema.dockerfile="/Dockerfile"
 
 RUN apk add --update curl && rm -rf /var/cache/apk/* ; \
-    pip install puppetboard=="$PUPPET_BOARD_VERSION" gunicorn=="$GUNICORN_VERSION" \
-    --proxy http://www-proxy.cs.kadaster.nl:8082/ \
-    --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org
+    pip install puppetboard=="$PUPPET_BOARD_VERSION" gunicorn=="$GUNICORN_VERSION"
 
 EXPOSE $PUPPETBOARD_PORT
 
